@@ -50,6 +50,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
         <div v-else>
           <h1 class="title">Welcome to {{appName}}</h1>
           <h2 class="subtitle">The NEWEST URL shortener on the block.</h2>
+          <p>Warning, this site is for testing only. Feel free to create an account but do not depend on the short links as they will be purged regularly.</p>
           <p v-if="linkNotFound">
             We're sorry, that link could not be found. <a v-bind:href="signUpUrl" >Sign up</a> or <a v-bind:href="logInUrl" >Log in</a> to register it?
           </p>
@@ -69,7 +70,7 @@ const clientId = process.env.VUE_APP_CLIENT_ID;
 const authDomain = process.env.VUE_APP_AUTH_DOMAIN;
 const queryStringParams = new URLSearchParams(window.location.search);
 const cognitoCode = queryStringParams.get('code') || null;
-const lnf = queryStringParams.get('lnf') || null;
+const lnf = queryStringParams.get('error') || null;
 const redUrl = window.location.origin;
 
 export default {

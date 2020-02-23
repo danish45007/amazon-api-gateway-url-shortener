@@ -147,7 +147,9 @@ export default {
               that.toggleModal();
               that.$store.commit('addLink', response.data);
           }
-        }).catch(() => { alert("SlipLink cannot be created. Bad format.") })
+        }).catch((err) => { 
+          alert(err) 
+        })
     },
     updateLink: function() {
       let that = this;
