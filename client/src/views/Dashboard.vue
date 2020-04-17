@@ -51,8 +51,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
           </div>
           <footer class="card-footer">
             <a v-on:click="toggleModal('edit', link, i)" href="#" class="card-footer-item">Edit</a>
+            <!-- <a target="_blank" :href="apiUrl + '/' + link.id" class="card-footer-item">Try it</a> -->
+            <a target="_blank" :href="`http://api.qrserver.com/v1/create-qr-code/?data=slip.link/${link.id}&size=100x100`" class="card-footer-item">Small QR</a>
+            <a target="_blank" :href="`http://api.qrserver.com/v1/create-qr-code/?data=slip.link/${link.id}&size=600x600`" class="card-footer-item">Large QR</a>
             <a v-on:click="deleteLink(link.id, i)" href="#" class="card-footer-item">Delete</a>
-            <a target="_blank" :href="apiUrl + '/' + link.id" class="card-footer-item">Try it</a>
           </footer>
         </div>
       </div>
